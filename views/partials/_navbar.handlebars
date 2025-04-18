@@ -1,11 +1,11 @@
-{{#checked usuarioLogado 'admin'}}
+{{#tipoUsuario usuarioLogado 'admin'}}!--validação de tipo de usuario para mostrar navbar correta--!
 
 <h1>admin</h1>
 
-{{/checked}}
+{{/tipoUsuario}}
 
 
 
-{{#checked usuarioLogado 'cliente'}}
+{{#tipoUsuario usuarioLogado 'cliente'}}
 <h1>cliente</h1>
-{{/checked}}
+{{/tipoUsuario}}

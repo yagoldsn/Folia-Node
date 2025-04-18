@@ -23,7 +23,7 @@ app.use(flash());
 //middleware
 app.use((req,res,next) =>{
   //declaração variaveis globais
-  res.locals.usuarioLogado = 'cliente';
+  res.locals.usuarioLogado = 'admin';
   res.locals.success_msg = req.flash('success_msg');
   res.locals.error_msg = req.flash('error_msg');
   next();
@@ -36,7 +36,7 @@ const optionsHandlebars = handlebars.create({
     /* Para usar o helpers basta adicionar #nomeDaRegra dentro da tag a utilizar e fechar ela depois de utilizada
     ex: <h1>{{#tipoPessoa teste}}{{/tipoPessoa}}</h1>
     */
-    checked: function (value, test) {//checked nome função, value e teste sao os valores para testar
+    tipoUsuario: function (value, test) {//checked nome função, value e teste sao os valores para testar
       if (value == undefined) return "";//validação de valor não definido, retornar vazio
       return value == test ? value : "";//validação se value == teste; retornar se verdadeiro; retornar se falso
     }
