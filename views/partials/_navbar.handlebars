@@ -1,11 +1,20 @@
-{{#tipoUsuario usuarioLogado 'admin'}}!--validação de tipo de usuario para mostrar navbar correta--!
+{{!-- {{#tipoUsuario usuarioLogado 'admin'}}
 
-<h1>admin</h1>
-
+<h1>teste1</h1>
 {{/tipoUsuario}}
 
 
 
 {{#tipoUsuario usuarioLogado 'cliente'}}
-<h1>cliente</h1>
-{{/tipoUsuario}}
+
+{{/tipoUsuario}} --}}
+
+
+<div>
+    
+<nav class="nav justify-content-center" {{#tipoUsuario2 usuarioLogado 'admin'}} {{/tipoUsuario2}}>
+  <a class="nav-link active" href="#">Active link</a>
+  <a class="nav-link" href="#">Link</a>
+  <a class="nav-link disabled" href="#">Disabled link</a>
+</nav>
+</div>

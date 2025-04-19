@@ -36,11 +36,18 @@ const optionsHandlebars = handlebars.create({
     /* Para usar o helpers basta adicionar #nomeDaRegra dentro da tag a utilizar e fechar ela depois de utilizada
     ex: <h1>{{#tipoPessoa teste}}{{/tipoPessoa}}</h1>
     */
-    tipoUsuario: function (value, test) {//checked nome função, value e teste sao os valores para testar
+    tipoUsuario: function (value, test) {//tipoUsuario nome função, value e teste sao os valores para testar
       if (value == undefined) return "";//validação de valor não definido, retornar vazio
       return value == test ? value : "";//validação se value == teste; retornar se verdadeiro; retornar se falso
+    },
+    'tipoUsuario1': function(value,test){
+      return value == test ? 1 : 0;
+    },
+    tipoUsuario2: function (value, test) {//tipoUsuario nome função, value e teste sao os valores para testar
+      if (value == undefined) return "";//validação de valor não definido, retornar vazio
+      return value == test ? Enable : Disable;//validação se value == teste; retornar se verdadeiro; retornar se falso
     }
-  }
+  },
 });
 
 app.engine("handlebars", optionsHandlebars.engine);
