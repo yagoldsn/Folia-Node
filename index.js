@@ -6,28 +6,29 @@ const bodyParser = require("body-parser");
 const banco = require("./SRC/config/DB");
 const path = require("path"); //modulo para usar pasta de arquivos estaticos
 const admin = require("./SRC/router/admin");
-const session =require ('express-session');
-const flash  = require('connect-flash');
-
+const session = require("express-session");
+const flash = require("connect-flash");
 
 //config
 
 //Sessão
-app.use(session({
-  secret:"foliacaboclo",
-  resave:true,
-  saveUninitialized:true
-}))
+app.use(
+  session({
+    secret: "foliacaboclo",
+    resave: true,
+    saveUninitialized: true,
+  })
+);
 //Flash
 app.use(flash());
 //middleware
-app.use((req,res,next) =>{
+app.use((req, res, next) => {
   //declaração variaveis globais
-  res.locals.usuarioLogado = 'admin';
-  res.locals.success_msg = req.flash('success_msg');
-  res.locals.error_msg = req.flash('error_msg');
+  res.locals.usuarioLogado = "admin";
+  res.locals.success_msg = req.flash("success_msg");
+  res.locals.error_msg = req.flash("error_msg");
   next();
-})
+});
 
 //handlebars template engine
 const optionsHandlebars = handlebars.create({
@@ -36,17 +37,11 @@ const optionsHandlebars = handlebars.create({
     /* Para usar o helpers basta adicionar #nomeDaRegra dentro da tag a utilizar e fechar ela depois de utilizada
     ex: <h1>{{#tipoPessoa teste}}{{/tipoPessoa}}</h1>
     */
-    tipoUsuario: function (value, test) {//tipoUsuario nome função, value e teste sao os valores para testar
-      if (value == undefined) return "";//validação de valor não definido, retornar vazio
-      return value == test ? value : "";//validação se value == teste; retornar se verdadeiro; retornar se falso
+    tipoUsuario: function (value, test) {
+      //tipoUsuario nome função, value e teste sao os valores para testar
+      if (value == undefined) return ""; //validação de valor não definido, retornar vazio
+      return value == test ? value : ""; //validação se value == teste; retornar se verdadeiro; retornar se falso
     },
-    'tipoUsuario1': function(value,test){
-      return value == test ? 1 : 0;
-    },
-    tipoUsuario2: function (value, test) {//tipoUsuario nome função, value e teste sao os valores para testar
-      if (value == undefined) return "";//validação de valor não definido, retornar vazio
-      return value == test ? Enable : Disable;//validação se value == teste; retornar se verdadeiro; retornar se falso
-    }
   },
 });
 
