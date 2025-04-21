@@ -3,11 +3,10 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
   res.render("admin/index");
-  // res.send('Pagina do administrador');
 });
 
-router.get("/usuario", (req, res) => {
-  res.render("usuario/index");
+router.get("/usuarios", (req, res) => {
+  res.render("usuarios/index");
 });
 
 module.exports = router;
