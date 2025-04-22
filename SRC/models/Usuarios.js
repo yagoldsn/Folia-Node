@@ -6,6 +6,39 @@ const Usuario = new Schema({
     nome:{
         type: String,//tipo de arquivo
         require: true//uso obrigatorio
+    },
+    dtNascimento:{
+        type: Date,
+        require: true,
+        default: Date.now
+    },
+    endereco:{
+        type: String,
+        require: false,
+        default: 'Não Informado'
+    },
+    bairro:{
+        type: String,
+        require: false,
+        default: 'Não Informado'
+    },
+    cidade:{
+        type: String,
+        require: false,
+        default: 'Não Informado'
+    },
+    uf:{
+        type: String,
+        require: false,
+        default: 'Não Informado'
+    },
+    email:{
+        type: String,
+        require: true
+    },
+    senha:{
+        type: String,
+        require: true
     }
 
 })
