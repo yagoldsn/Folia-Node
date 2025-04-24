@@ -1,6 +1,8 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 mongoose.Promise = global.Promise;
-const banco = mongoose.connect('mongodb+srv://yago:mulnbo182@cluster0.im5jtw0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/folia');
+const banco = mongoose.connect(
+  "mongodb+srv://yago:mulnbo182@cluster0.im5jtw0.mongodb.net/folia"
+);
 
-module.exports =  banco;
+module.exports = banco;
