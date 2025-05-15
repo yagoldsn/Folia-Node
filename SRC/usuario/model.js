@@ -43,9 +43,10 @@ const Usuario = new Schema({
 
 })
 
-mongoose.model('usuarios', Usuario);//collection(tabela)
+mongoose.model('usuarios', Usuario)//collection(tabela)
 
-module.exports = Usuario;
+
+// module.exports = Usuario;
 
 //const novoUsuario = mongoose.model('usuarios');
 /*

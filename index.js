@@ -5,7 +5,10 @@ const handlebars = require("express-handlebars");
 const bodyParser = require("body-parser");
 const banco = require("./SRC/config/DB");
 const path = require("path"); //modulo para usar pasta de arquivos estaticos
-const admin = require("./SRC/router/admin");
+//inicio importação de rotas
+const admin = require("./SRC/admin/routes");
+const usuarios = require("./SRC/usuario/routes");
+//fim importação de rotas
 const session = require("express-session");
 const flash = require("connect-flash");
 
@@ -64,6 +67,7 @@ banco
 
 //rotas
 app.use("/admin", admin);
+app.use("/usuarios", usuarios);
 
 //configuração de porta http
 app.listen(2000, () => {
