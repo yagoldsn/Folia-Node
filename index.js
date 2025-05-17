@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const banco = require("./SRC/config/DB");
 const path = require("path"); //modulo para usar pasta de arquivos estaticos
 //inicio importação de rotas
-const admin = require("./SRC/admin/routes");
+const admin = require("./src/admin/routes");
 const usuarios = require("./SRC/usuario/routes");
 //fim importação de rotas
 const session = require("express-session");
@@ -27,7 +27,7 @@ app.use(flash());
 //middleware
 app.use((req, res, next) => {
   //declaração variaveis globais
-  res.locals.usuarioLogado = "admin";
+  // res.locals.usuarioLogado = "admin";
   res.locals.success_msg = req.flash("success_msg");
   res.locals.error_msg = req.flash("error_msg");
   next();
